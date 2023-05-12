@@ -24,8 +24,9 @@
 - Instrucciones de ejecucion
   - `py Main.py`
 
-## Errores
--Descripcion:None - Se ha solucionado cambiando el print de la funcion descripcion() por un return
+## Errores y Bugs
+- Problema al importar las clases - Se ha solucionado ya que se estaba llamando al modulo y no a la clase
+- Descripcion:None - Se ha solucionado cambiando el print de la funcion descripcion() por un return
 ## First assesment sprint EOI Cloud computing!
 
 #### Repositorios:
