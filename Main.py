@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from clases import alimentos
 
 app = Flask(__name__,template_folder='html')
 
@@ -9,7 +10,7 @@ def alimentos():
 @app.route("/alimentos", methods=['POST'])
 def mostrar_alimentos():
  # Obtener la alimento seleccionada por el usuario
-
+ alimento_ingresado=request.form["alimento"]
  # Insertar el código aquí
         
  # Renderizar la página de alimentos con el alimento seleccionado
@@ -18,6 +19,6 @@ def mostrar_alimentos():
 
 if __name__ == '__main__':
    app.run(debug=True)
-```
+
 
 

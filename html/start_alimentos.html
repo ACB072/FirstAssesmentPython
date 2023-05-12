@@ -1,0 +1,61 @@
+<!-- start_alimentos.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de alimentos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/alimentos">
+    <legend>Información de alimentos</legend>
+    <fieldset  class="d-grid" >
+      <label for="alimento">Selecciona una alimento:</label>
+      <select id="alimento" name="alimento" class="col-form-label col-form-label-sm">
+        <option value="pizza">Pizza</option>
+        <option value="hamburguesa">Hamburguesa</option>
+        <option value="sushi">Sushi</option>
+      </select>
+      <label for="Precio" class="col-form-label col-form-label-sm">Precio:</label>
+      <input type="number" id="precio" name="precio" >
+      <div id="atributos">
+        <label for="ingredientes" class="col-form-label col-form-label-sm">Ingredientes:</label>
+        <input type="text" id="ingredientes" name="ingredientes" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const alimentoselect = document.getElementById("alimento");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const alimento = alimentoselect.value;
+      atributosDiv.innerHTML = "";
+
+      if (alimento === "pizza") {
+        atributosDiv.innerHTML += `
+        <label for="ingredientes" class="col-form-label col-form-label-sm">Ingredientes:</label>
+        <input type="text" id="ingredientes" name="ingredientes" >
+          `;
+      } else if (alimento === "hamburguesa") {
+        atributosDiv.innerHTML += `
+            <label for="tipo_carne" class="col-form-label col-form-label-sm">Tipo Carne:</label>
+            <input type="text" id="tipo_carne" name="tipo_carne">
+          `;
+      } else if (alimento === "sushi") {
+        atributosDiv.innerHTML += `
+            <label for="tipo_sushi" class="col-form-label col-form-label-sm">Tipo_sushi:</label>
+            <input type="text" id="tipo_sushi" name="tipo_sushi">
+          `;
+      }
+    }
+    alimentoselect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>
