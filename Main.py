@@ -15,6 +15,7 @@ def mostrar_alimentos():
     # Obtener la alimento seleccionada por el usuario
     nombre=request.form["alimento"]
     precio=request.form["precio"]
+     # Insertar el código aquí
     if(nombre=="pizza"):
         ingredientes=request.form["ingredientes"]
         alimento_ingresado=Pizza(nombre,precio,ingredientes)
@@ -24,9 +25,7 @@ def mostrar_alimentos():
     elif (nombre=="hamburguesa"):
         tipo_carne=request.form["tipo_carne"]
         alimento_ingresado=Sushi(nombre,precio,tipo_carne)
-    
-    # Insertar el código aquí
-            
+
     # Renderizar la página de alimentos con el alimento seleccionado
     return render_template("alimentos.html", alimento=alimento_ingresado)
 
