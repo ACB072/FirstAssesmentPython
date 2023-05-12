@@ -1,5 +1,8 @@
 from flask import Flask, request, render_template
-from clases import alimentos
+from clases.Pizza import Pizza
+from clases.Sushi import Sushi
+from clases.Hamburguesa import Hamburguesa
+
 
 app = Flask(__name__,template_folder='html')
 
@@ -9,12 +12,23 @@ def alimentos():
 
 @app.route("/alimentos", methods=['POST'])
 def mostrar_alimentos():
- # Obtener la alimento seleccionada por el usuario
- alimento_ingresado=request.form["alimento"]
- # Insertar el código aquí
-        
- # Renderizar la página de alimentos con el alimento seleccionado
- return render_template("alimentos.html", alimento=alimento_ingresado)
+    # Obtener la alimento seleccionada por el usuario
+    nombre=request.form["alimento"]
+    precio=request.form["precio"]
+    if(nombre=="pizza"):
+        ingredientes=request.form["ingredientes"]
+        alimento_ingresado=Pizza(nombre,precio,ingredientes)
+    elif(nombre=="sushi"):
+        tipo_sushi=request.form["tipo_sushi"]
+        alimento_ingresado=Sushi(nombre,precio,tipo_sushi)
+    elif (nombre=="hamburguesa"):
+        tipo_carne=request.form["tipo_carne"]
+        alimento_ingresado=Sushi(nombre,precio,tipo_carne)
+    
+    # Insertar el código aquí
+            
+    # Renderizar la página de alimentos con el alimento seleccionado
+    return render_template("alimentos.html", alimento=alimento_ingresado)
 
 
 if __name__ == '__main__':

@@ -24,11 +24,13 @@
 - Instrucciones de ejecucion
   - `py Main.py`
 
+## Errores
+-Descripcion:None - Se ha solucionado cambiando el print de la funcion descripcion() por un return
 ## First assesment sprint EOI Cloud computing!
 
 #### Repositorios:
 
-- [ ] FirstAssesmentPython
+- [X] FirstAssesmentPython
 
 ### Introducción
 
@@ -51,12 +53,12 @@ En esta descarga encontrará un escenario que deberá resolver para completar co
 - [X] Dividir en apropiados ficheros los archivos que forman parte de la solución del código que se presenta en el escenario.
 - [X] Instalar las librerías necesarias para la ejecución del programa si las necesitase. 
 - [X] La generación del fichero de requirements para el entorno de trabajo.
-- [ ] La conexión de todos los elementos del programa en un programa principal.
-- [ ] La prueba de los datos con la información dada. Comprobación que el programa funciona interconectando todos sus elementos.
+- [X] La conexión de todos los elementos del programa en un programa principal.
+- [X] La prueba de los datos con la información dada. Comprobación que el programa funciona interconectando todos sus elementos.
 - [X] La creación del fichero .gitignore que funcione e ignore lo que tiene que ignorar.
 - [X] La creación del repositorio local.
 - [X] El subir en el repositorio en GitHub indicado en su cuenta de GitHub en modo público. No deberá tener colaboradores.
-- [ ] Readme.md con las instrucciones para descargar el proyecto y ejecutarlo y observaciones, para el caso de que existan bugs y no haya alcanzado el tiempo para resolverlos.
+- [X] Readme.md con las instrucciones para descargar el proyecto y ejecutarlo y observaciones, para el caso de que existan bugs y no haya alcanzado el tiempo para resolverlos.
 
 > **Recuerde** que para iniciar un programa desde cero, debe utilizar la técnica de algoritmación que lo guiará por el camino de la solución.
 >
