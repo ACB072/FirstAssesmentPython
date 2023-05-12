@@ -1,0 +1,36 @@
+<!--alimentos.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información de la alimento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información de alimentos</legend>
+        <div class="form-group row">
+            {% if alimento %}
+            <p><strong>Nombre:</strong> {{ alimento.nombre }}</p>
+            <p><strong>Precio:</strong> {{ alimento.precio }}</p>
+            {% if (alimento.Nombre == "pizza") %}
+            <p><strong>Ingredientes:</strong> {{ alimento.ingredientes }}</p>
+            {% elif (alimento.Nombre== "hamburguesa") %}
+            <p><strong>Tipo de carne:</strong> {{ alimento.tipo_carne }}</p>
+            {% elif (alimento.Nombre == "sushi") %}
+            <p><strong>Tipo Sushi:</strong> {{ alimento.tipo_sushi }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ alimento.descripcion() }}</p>
+            {% else %}
+            <p>La alimento seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas alimentos</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
