@@ -1,4 +1,4 @@
-from clases.Alimentos import Alimentos
+from clases.alimentos import Alimentos
 class Pizza(Alimentos):
     def __init__(self, nombre, precio, ingredientes):
         super().__init__(nombre, precio)
