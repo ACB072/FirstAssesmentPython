@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
-from clases.Pizza import Pizza
-from clases.Sushi import Sushi
-from clases.Hamburguesa import Hamburguesa
+from clases.pizza import Pizza
+from clases.sushi import Sushi
+from clases.hamburguesa import Hamburguesa
 
 
 app = Flask(__name__,template_folder='html')
